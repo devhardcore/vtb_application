@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_project/levels/second_intro.dart';
-import 'package:test_project/welcome/second.dart';
 import 'package:test_project/widgets/next_button.dart';
 import 'package:test_project/widgets/score.dart';
 
@@ -38,8 +37,11 @@ class _IntroScreenState extends State<IntroScreen> {
                     SizedBox(height: screenHeight * 0.03),
                     Score(score: "0")
                   ]),
-              Image.asset('assets/images/2.png'),
-              SizedBox(height: screenHeight * 0.02),
+              SizedBox(height: screenHeight * 0.015),
+              Align(
+                  alignment: Alignment.center,
+                  child: Image.asset('assets/images/2.png')),
+              SizedBox(height: screenHeight * 0.015),
               Container(
                   width: screenWidth * 0.8,
                   child: Text(

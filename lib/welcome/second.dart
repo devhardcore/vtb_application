@@ -136,16 +136,18 @@ class _SecondScreenState extends State<SecondScreen> {
                         color: const Color(0xFF4F4F4F),
                         fontSize: 18,
                       )),
-                  Checkbox(
-                    checkColor: Colors.white,
-                    fillColor: MaterialStateProperty.resolveWith(getColor),
-                    value: isChecked,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        isChecked = value!;
-                      });
-                    },
-                  ),
+                  Container(
+                      width: screenWidth * 0.08,
+                      child: Checkbox(
+                        checkColor: Colors.white,
+                        fillColor: MaterialStateProperty.resolveWith(getColor),
+                        value: isChecked,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            isChecked = value!;
+                          });
+                        },
+                      )),
                 ],
               ),
               SizedBox(height: screenHeight * 0.2),
