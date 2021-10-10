@@ -54,10 +54,11 @@ class _FirstScreenState extends State<FirstScreen> {
                   child: FloatingActionButton(
                     backgroundColor: const Color(0xFF3A83F1),
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushAndRemoveUntil(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => new SecondScreen()));
+                              builder: (context) => new SecondScreen()),
+                          (Route<dynamic> route) => false);
                     },
                     child: SvgPicture.asset("assets/images/tr.svg"),
                   )), // This trailing co

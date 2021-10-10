@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_project/levels/cash.dart';
 import 'package:test_project/levels/chocolate.dart';
-import 'package:test_project/welcome/second.dart';
-import 'package:test_project/widgets/next_button.dart';
 import 'package:test_project/widgets/score.dart';
 import 'package:test_project/widgets/select_button.dart';
 
@@ -63,19 +61,21 @@ class _FirstLvlScreenState extends State<FirstLvlScreen> {
                   SelectButton(
                       text: "Шоколадка",
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushAndRemoveUntil(
                             context,
                             new MaterialPageRoute(
-                                builder: (context) => new ChocolateScreen()));
+                                builder: (context) => new ChocolateScreen()),
+                            (Route<dynamic> route) => false);
                       }),
                   SelectButton(
                       key: PageStorageKey("123"),
                       text: "Отложить",
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushAndRemoveUntil(
                             context,
                             new MaterialPageRoute(
-                                builder: (context) => new CashScreen()));
+                                builder: (context) => new CashScreen()),
+                            (Route<dynamic> route) => false);
                       })
                 ],
               ),

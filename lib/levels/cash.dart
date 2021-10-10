@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_project/levels/final.dart';
 import 'package:test_project/levels/second.dart';
 import 'package:test_project/widgets/next_button.dart';
 import 'package:test_project/widgets/score.dart';
@@ -36,7 +35,7 @@ class _CashScreenState extends State<CashScreen> {
                           fontSize: 24,
                         )),
                     SizedBox(height: screenHeight * 0.03),
-                    Score(score: "0")
+                    Score(score: "15")
                   ]),
               SizedBox(height: screenHeight * 0.03),
               Align(
@@ -56,10 +55,11 @@ class _CashScreenState extends State<CashScreen> {
               Align(
                   alignment: Alignment.center,
                   child: NextButton(onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                         context,
                         new MaterialPageRoute(
-                            builder: (context) => new FinalScreen()));
+                            builder: (context) => new SecondLvlScreen()),
+                        (Route<dynamic> route) => false);
                   }))
             ],
           ),

@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_project/levels/second_intro.dart';
+import 'package:test_project/levels/second.dart';
+import 'package:test_project/levels/sliders.dart';
 import 'package:test_project/widgets/next_button.dart';
 import 'package:test_project/widgets/score.dart';
 
-class IntroScreen extends StatefulWidget {
-  createState() => new _IntroScreenState();
+class TradeNote extends StatefulWidget {
+  createState() => new _TradeNoteState();
 }
 
-class _IntroScreenState extends State<IntroScreen> {
+class _TradeNoteState extends State<TradeNote> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -28,24 +29,24 @@ class _IntroScreenState extends State<IntroScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Добро пожаловать!",
+                    Text("Куда инвестировать",
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                           fontSize: 24,
                         )),
                     SizedBox(height: screenHeight * 0.03),
-                    Score(score: "0")
+                    Score(score: "10K")
                   ]),
-              SizedBox(height: screenHeight * 0.015),
+              SizedBox(height: screenHeight * 0.03),
               Align(
                   alignment: Alignment.center,
-                  child: Image.asset('assets/images/2.png')),
-              SizedBox(height: screenHeight * 0.015),
+                  child: Image.asset('assets/images/5.png')),
+              SizedBox(height: screenHeight * 0.035),
               Container(
                   width: screenWidth * 0.8,
                   child: Text(
-                      "Привет ещё раз! Давай немного расскажу о том, что будет происходить. Начнем с цели игры: через простые выборы ты узнаешь, как мудро управлять своими финансами. Узнаешь, почему вредные привычки опасны не только для здоровья, но и для кошелька, а также получишь ",
+                      "Ты смог преумножить свой капитал, вложившись в выгодные акции. Молодец!",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         color: Colors.black,
@@ -58,7 +59,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     Navigator.pushAndRemoveUntil(
                         context,
                         new MaterialPageRoute(
-                            builder: (context) => new SecondIntroScreen()),
+                            builder: (context) => new SlidersScreen()),
                         (Route<dynamic> route) => false);
                   }))
             ],

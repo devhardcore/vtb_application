@@ -35,7 +35,7 @@ class _ChocolateScreenState extends State<ChocolateScreen> {
                           fontSize: 24,
                         )),
                     SizedBox(height: screenHeight * 0.03),
-                    Score(score: "20")
+                    Score(score: "0")
                   ]),
               SizedBox(height: screenHeight * 0.03),
               Align(
@@ -45,7 +45,7 @@ class _ChocolateScreenState extends State<ChocolateScreen> {
               Container(
                   width: screenWidth * 0.8,
                   child: Text(
-                      "Ты выбрал отложить деньги на светлое будущее. Да, сейчас ты не понимаешь, зачем. Но важно, что начинает формироваться привычка не тратить деньги на сиюминутные радости. Сейчас у тебя всего 15 баксов, но выбирая также в дальнейшем, ты точно достигнешь своих финансовых целей!",
+                      "Ты выбрал шоколадку. Руководствуясь сиюминутными желаниями, много не достичь. Нужно понимать, когда стоит тратить деньги, а когда лучше отложить на светлое будущее.",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         color: Colors.black,
@@ -55,10 +55,11 @@ class _ChocolateScreenState extends State<ChocolateScreen> {
               Align(
                   alignment: Alignment.center,
                   child: NextButton(onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                         context,
                         new MaterialPageRoute(
-                            builder: (context) => new SecondLvlScreen()));
+                            builder: (context) => new SecondLvlScreen()),
+                        (Route<dynamic> route) => false);
                   }))
             ],
           ),

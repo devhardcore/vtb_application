@@ -50,14 +50,15 @@ class _SecondIntroScreenState extends State<SecondIntroScreen> {
                         color: Colors.black,
                         fontSize: 16,
                       ))),
-              SizedBox(height: screenHeight * 0.05),
+              SizedBox(height: screenHeight * 0.07),
               Align(
                   alignment: Alignment.center,
                   child: NextButton(onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                         context,
                         new MaterialPageRoute(
-                            builder: (context) => new FirstLvlScreen()));
+                            builder: (context) => new FirstLvlScreen()),
+                        (Route<dynamic> route) => false);
                   }))
             ],
           ),

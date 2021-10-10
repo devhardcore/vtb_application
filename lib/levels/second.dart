@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_project/levels/cash.dart';
 import 'package:test_project/levels/second_bank.dart';
+import 'package:test_project/levels/second_trade.dart';
 import 'package:test_project/widgets/score.dart';
 import 'package:test_project/widgets/select_button.dart';
 
@@ -60,18 +60,20 @@ class _SecondLvlScreenState extends State<SecondLvlScreen> {
                       text: "Вклад",
                       key: const PageStorageKey("123"),
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushAndRemoveUntil(
                             context,
                             new MaterialPageRoute(
-                                builder: (context) => new BankScreen()));
+                                builder: (context) => new BankScreen()),
+                            (Route<dynamic> route) => false);
                       }),
                   SelectButton(
                       text: "Б.Счет",
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushAndRemoveUntil(
                             context,
                             new MaterialPageRoute(
-                                builder: (context) => new CashScreen()));
+                                builder: (context) => new TradeScreen()),
+                            (Route<dynamic> route) => false);
                       })
                 ],
               ),

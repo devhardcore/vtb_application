@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_project/levels/second_intro.dart';
+import 'package:test_project/levels/sliders.dart';
 import 'package:test_project/widgets/next_button.dart';
 import 'package:test_project/widgets/score.dart';
 
@@ -9,6 +9,7 @@ class BankScreen extends StatefulWidget {
 }
 
 class _BankScreenState extends State<BankScreen> {
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -57,10 +58,11 @@ class _BankScreenState extends State<BankScreen> {
                   child: NextButton(
                       text: "Понял",
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushAndRemoveUntil(
                             context,
                             new MaterialPageRoute(
-                                builder: (context) => new SecondIntroScreen()));
+                                builder: (context) => new SlidersScreen()),
+                            (Route<dynamic> route) => false);
                       }))
             ],
           ),
